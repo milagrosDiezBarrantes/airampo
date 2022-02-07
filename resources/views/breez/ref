@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        @include('breez.parts.head')
+
+        @include('svg.css')
+
+    </head>
+    
+    <body style="color: #ffff">
+    
+        <!-- ***** Preloader Start ***** -->
+            @include('breez.sections.preloader')
+        <!-- ***** Preloader End ***** -->
+        
+        
+        <!-- ***** Header Area Start ***** -->
+        <header class="header-area header-sticky">
+            @include('breez.parts.header')
+        </header>
+        <!-- ***** Header Area End ***** -->
+        
+        <!-- ***** Search Area ***** -->
+            <div id="search">
+                <button type="button" class="close">×</button>
+                <form id="contact" action="#" method="get">
+                    <fieldset>
+                        <input type="search" name="q" placeholder="BUSQUEDA" aria-label="Search through site content">
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit" class="main-button">Buscar</button>
+                    </fieldset>
+                </form>
+            </div>
+
+        <!-- ***** Main Banner Area Start ***** -->
+        <div class="main-banner header-text" id="top">
+            @include('breez.sections.slider')
+        </div>
+        <div class="scroll-down scroll-to-section"><a href="#about"><i class="fa fa-arrow-down"></i></a></div>
+        <!-- ***** Main Banner Area End ***** -->
+
+        <!-- ***** About Area Starts ***** -->
+        <section class="section" id="about" >
+            @include('breez.sections.map')
+        </section>
+        <!-- ***** About Area Ends ***** -->
+
+        <!-- ***** Features Big Item Start ***** -->
+        {{-- style="background-color: #2a416c" --}}
+        <section class="section" id="features">
+            @include('breez.sections.features')
+        </section>
+        <!-- ***** Features Big Item End ***** -->
+
+        <!-- ***** Features Big Item Start ***** -->
+        <section class="section" id="subscribe">
+            @include('breez.sections.subscribe')
+        </section>
+        <!-- ***** Features Big Item End ***** -->
+
+
+        <!-- ***** Projects Area Starts ***** -->
+        <section class="section" id="projects">
+            @include('breez.sections.projects')
+        </section>
+        <!-- ***** Projects Area Ends ***** -->
+
+        <!-- ***** Testimonials Starts ***** -->
+        <section class="section" id="testimonials">
+            @include('breez.sections.testimonials')
+        </section>
+        <!-- ***** Testimonials Ends ***** -->
+        
+        <!-- ***** Contact Us Area Starts ***** -->
+        <section class="section" id="contact-us">
+            @include('breez.sections.contact')
+        </section>
+        <!-- ***** Contact Us Area Ends ***** -->
+        
+        <!-- ***** Footer Start ***** -->
+        <footer>
+            @include('breez.parts.footer')
+        </footer>
+        
+
+        {{-- scripts --}}
+        @include('breez.parts.scripts')
+
+
+        @include('svg.script')
+
+        <script>
+
+            $(function() {
+                var selectedClass = "";
+                $("p").click(function(){
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                    $("#portfolio div").not("."+selectedClass).fadeOut();
+                setTimeout(function() {
+                $("."+selectedClass).fadeIn();
+                $("#portfolio").fadeTo(50, 1);
+                }, 500);
+                    
+                });
+            });
+
+        </script>
+
+    </body>
+</html>

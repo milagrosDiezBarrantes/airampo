@@ -1,0 +1,5 @@
+@include('breez.sections.items.item_A_proy')
+@include('breez.sections.items.item_B_proy')
+@include('breez.sections.items.item_C_proy')
+@include('breez.sections.items.item_B_proy')
+@include('breez.sections.items.item_C_proy')
